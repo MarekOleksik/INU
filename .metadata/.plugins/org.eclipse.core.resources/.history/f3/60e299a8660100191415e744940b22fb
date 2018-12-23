@@ -1,0 +1,20 @@
+package application;
+
+import javafx.application.Application;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+
+public abstract class Information extends Application {
+		 
+
+	    public static void showInfo() {
+	        Alert info = new Alert(AlertType.INFORMATION);
+	        info.setTitle("Informacja");
+	 
+	        // Header Text: null
+	        info.setHeaderText(null);
+	        info.setContentText("Connect to the database successfully!");
+	 
+	        info.showAndWait();
+	    }
+}

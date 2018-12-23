@@ -1,0 +1,36 @@
+package application;
+
+import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+public abstract class Information extends Application {
+
+	
+	public void showInfo(Stage stage) {
+	VBox root = new VBox();
+    root.setPadding(new Insets(10));
+    root.setSpacing(10);		
+   
+	Image image = new Image(
+	ClassLoader.getSystemResourceAsStream("StatusInformation_64x.png"));
+	ImageView imageView = new ImageView(image);
+    HBox hbox1 = new HBox(30, imageView);
+    HBox hbox2 = new HBox();
+	
+	        Alert info = new Alert(AlertType.INFORMATION);
+	        info.setTitle("Informacja");
+	 
+	        // Header Text: null
+	        info.setHeaderText(null);
+	        info.setContentText("Uda³o siê uruchomiæ okienko informacyjne. Gratulacje!");
+	        
+	        info.showAndWait();
+	    }
+}

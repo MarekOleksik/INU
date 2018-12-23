@@ -1,0 +1,48 @@
+package application;
+
+import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+public abstract class Information extends Application {
+
+	
+	public static void showInfo() {
+		
+		  StackPane secondaryLayout = new StackPane();
+   
+          Scene secondScene = new Scene(secondaryLayout, 230, 100);
+	Stage stage1 = new Stage();
+	VBox root1 = new VBox();
+    root1.setPadding(new Insets(10));
+    root1.setSpacing(10);		
+   
+	Image image = new Image(
+	ClassLoader.getSystemResourceAsStream("StatusInformation_64x.png"));
+	ImageView imageView = new ImageView(image);
+    HBox hbox1 = new HBox(30, imageView);
+    HBox hbox2 = new HBox();
+	
+    root1.getChildren().addAll(hbox1,hbox2);
+    
+    Stage newWindow = new Stage();
+    newWindow.setTitle("Second Stage");
+    newWindow.setScene(secondScene);
+
+
+    newWindow.setX(stage1.getX() + 200);
+    newWindow.setY(stage1.getY() + 100);
+
+    newWindow.showAndWait();
+
+
+	    }
+}
