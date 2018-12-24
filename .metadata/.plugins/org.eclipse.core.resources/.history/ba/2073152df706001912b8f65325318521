@@ -1,0 +1,11 @@
+package application;
+
+import javax.swing.JOptionPane;
+
+public class CriticalError {
+
+	static void showCriticalError() {
+		JOptionPane.showMessageDialog(null, "Critical Error", "To jest b³¹d krytyczny", JOptionPane.ERROR_MESSAGE );
+		
+	}
+}

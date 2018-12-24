@@ -2,8 +2,20 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="javafx.scene.control.Alert.AlertType"/>
+<fullyQualifiedTypeName name="javafx.scene.layout.StackPane"/>
+<fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+<fullyQualifiedTypeName name="javafx.scene.text.Text"/>
 <fullyQualifiedTypeName name="javafx.geometry.Insets"/>
+<fullyQualifiedTypeName name="javafx.scene.control.Label"/>
 <fullyQualifiedTypeName name="javafx.scene.image.ImageView"/>
 <fullyQualifiedTypeName name="javafx.scene.image.Image"/>
-<fullyQualifiedTypeName name="javafx.scene.layout.StackPane"/>
+<fullyQualifiedTypeName name="javafx.geometry.VPos"/>
+<fullyQualifiedTypeName name="javafx.scene.Group"/>
+<fullyQualifiedTypeName name="javafx.collections.ObservableList"/>
+<fullyQualifiedTypeName name="javafx.collections.FXCollections"/>
+<fullyQualifiedTypeName name="javafx.scene.shape.Line"/>
+<fullyQualifiedTypeName name="javafx.scene.paint.Color"/>
+<fullyQualifiedTypeName name="javafx.scene.control.ButtonType"/>
+<fullyQualifiedTypeName name="javafx.scene.control.ButtonBar.ButtonData"/>
+<fullyQualifiedTypeName name="javafx.scene.control.Dialog"/>
 </qualifiedTypeNameHistroy>

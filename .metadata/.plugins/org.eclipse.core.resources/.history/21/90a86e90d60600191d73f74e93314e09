@@ -1,0 +1,82 @@
+package application;
+
+import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+
+public class Main extends Application {
+
+	private Label label;
+
+	private void showInfo() {
+		Image imageInfo = new Image(
+		ClassLoader.getSystemResourceAsStream("images\\StatusInformation_64x.png"));
+		ImageView imageViewInfo = new ImageView(imageInfo);
+		
+		Stage stageInfo = new Stage();
+		VBox rootInfo = new VBox();
+		HBox hboxInfo = new HBox();
+		HBox hbox1Info = new HBox();
+
+		Scene sceneInfo = new Scene(rootInfo, 450, 150);
+		stageInfo.setTitle("Informaacja");
+		stageInfo.setScene(sceneInfo);
+		stageInfo.setAlwaysOnTop(true);
+		stageInfo.centerOnScreen();
+		stageInfo.setResizable(false);
+		stageInfo.initModality(Modality.APPLICATION_MODAL);
+		stageInfo.showAndWait();
+		
+		rootInfo.getChildren().addAll(hboxInfo, hbox1Info, label);
+		hboxInfo.getChildren().add(imageViewInfo);
+	}
+
+	@Override
+	public void start(Stage stage) {
+
+		VBox root = new VBox();
+		HBox hbox = new HBox();
+		root.setPadding(new Insets(10));
+		root.setSpacing(50);
+		root.setAlignment(Pos.CENTER);
+		hbox.setPadding(new Insets(10));
+		hbox.setSpacing(20);
+		hbox.setAlignment(Pos.CENTER);
+
+		this.label = new Label();
+
+		Button button = new Button("Informacja");
+		Button button1 = new Button("Ostrze¿enie");
+		Button button2 = new Button("Alarm");
+		Button button3 = new Button("B³¹d krytyczny");
+
+		button.setOnAction(e -> showInfo());
+		button1.setOnAction(e -> showInfo());
+		button2.setOnAction(e -> showInfo());
+		button3.setOnAction(e -> showInfo());
+
+		root.getChildren().addAll(hbox, label);
+		hbox.getChildren().addAll(button, button1, button2, button3);
+
+		Scene scene = new Scene(root, 450, 200);
+		stage.setTitle("Praca zaliczeniowa INU");
+		stage.setScene(scene);
+
+		stage.show();
+
+	}
+
+	public static void main(String args[]) {
+		launch(args);
+	}
+
+}
