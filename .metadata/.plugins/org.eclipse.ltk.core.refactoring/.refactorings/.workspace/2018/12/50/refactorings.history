@@ -1,4 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Delete resource &apos;MyFirstJavaProject&apos;" deleteContents="true" description="Delete resource &apos;MyFirstJavaProject&apos;" element1="/MyFirstJavaProject" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1544441002847"/>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;MyFirstJavaProject&apos;" deleteContents="true" description="Delete resource &apos;MyFirstJavaProject&apos;" element1="/MyFirstJavaProject" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1544441002847"/>&#x0A;<refactoring comment="Rename resource &apos;vbox_hbox_test&apos; to &apos;VBoxDemo&apos;" description="Rename resource &apos;vbox_hbox_test&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/vbox_hbox_test" name="VBoxDemo" stamp="1544992943102" updateReferences="true"/>
 </session>
