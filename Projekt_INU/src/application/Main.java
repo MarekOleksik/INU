@@ -1,71 +1,67 @@
 package application;
-	
+
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 
 public class Main extends Application {
-	@Override
-    public void start(Stage stage) {
- 
-        HBox root = new HBox();
-        root.setPadding(new Insets(10));
-        root.setSpacing(10);
- 
-        Button button1 = new Button("Informacja");
-        Button button2 = new Button("Ostrze¿enie");
-        Button button3 = new Button("B³¹d");
-        Button button4 = new Button("Okno potwierdzenia");
- 
-        button1.setOnAction(new EventHandler<ActionEvent>() {
- 
-            @Override
-            public void handle(ActionEvent event) {
-                Information.showInfo();
-            }
-        });
- 
-        button2.setOnAction(new EventHandler<ActionEvent>() {
- 
-            @Override
-            public void handle(ActionEvent event) {
-           //     showAlertWithDefaultHeaderText();
-            }
-        });
- 
-        button3.setOnAction(new EventHandler<ActionEvent>() {
- 
-            @Override
-            public void handle(ActionEvent event) {
-            //    showAlertWithoutHeaderText();
-            }
-        });
- 
-        button4.setOnAction(new EventHandler<ActionEvent>() {
-        	 
-            @Override
-            public void handle(ActionEvent event) {
-            //    showAlertWithoutHeaderText();
-            }
-        });
-        
-        root.getChildren().addAll(button1, button2, button3, button4);
- 
-        Scene scene = new Scene(root, 450, 250);
-        stage.setTitle("Projekt INU");
-        stage.setScene(scene);
- 
-        stage.show();
- 
-    }
+
+	private Label label;
+	//Text lblMsg = new Text();
+	//lblMsg.setFont(Font.font("Arial", FontWeight.NORMAL, 14));
+	//lblMsg.setFont(Font.font(12));
 	
-	public static void main(String[] args) {
+	
+
+
+	@Override
+	public void start(Stage stage) {
+
+		VBox root = new VBox();
+		HBox hbox = new HBox();
+		root.setPadding(new Insets(10));
+		root.setSpacing(50);
+		root.setAlignment(Pos.CENTER);
+		hbox.setPadding(new Insets(10));
+		hbox.setSpacing(20);
+		hbox.setAlignment(Pos.CENTER);
+
+		this.label = new Label();
+
+		Button button = new Button("Informacja");
+		Button button1 = new Button("Ostrze¿enie");
+		Button button2 = new Button("Alarm");
+		Button button3 = new Button("B³¹d krytyczny");
+
+		button.setOnAction(e -> Information.showInfo());
+		button1.setOnAction(e -> Warning.showWarn());
+		button2.setOnAction(e -> Alert.showAlert());
+		button3.setOnAction(e -> CriticalError.showCriticalError());
+
+		root.getChildren().addAll(hbox, label);
+		hbox.getChildren().addAll(button, button1, button2, button3);
+
+		Scene scene = new Scene(root, 640, 480);
+		stage.setTitle("Praca zaliczeniowa INU");
+		stage.setScene(scene);
+		stage.centerOnScreen();
+
+		stage.show();
+
+		MessageBoxButton.AbortRetryIgnore.getCount();
+	}
+
+	public static void main(String args[]) {
 		launch(args);
 	}
+
 }

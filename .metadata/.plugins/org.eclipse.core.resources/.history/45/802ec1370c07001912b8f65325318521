@@ -1,0 +1,18 @@
+package application;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
+public class EnvironmentDAO {
+
+	public static ObservableList<Environment> getEnvironmentList() {
+		Environment prod = new Environment ("PROD", "Produkcyjne");
+		Environment test = new Environment ("TEST", "Testowe");
+		Environment dev = new Environment ("DEV", "Deweloperskie");
+		
+		ObservableList<Environment> list //
+		= FXCollections.observableArrayList(prod, test, dev);
+		
+		return list;
+	}
+}

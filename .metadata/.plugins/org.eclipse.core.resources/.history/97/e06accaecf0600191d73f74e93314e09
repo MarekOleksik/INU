@@ -1,0 +1,75 @@
+package application;
+
+import java.util.Optional;
+
+import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+public class Main extends Application {
+
+	private Label label;
+
+	private void showInfo() {
+		Stage stage1 = new Stage();
+		VBox root1 = new VBox();
+		Scene scene1 = new Scene(root1, 350, 200);
+		stage1.setTitle("Praca zaliczeniowa INU");
+		stage1.setScene(scene1);
+
+		stage1.show();
+
+
+	}
+
+	@Override
+	public void start(Stage stage) {
+
+		VBox root = new VBox();
+		HBox hbox = new HBox();
+		root.setPadding(new Insets(10));
+		root.setSpacing(50);
+		root.setAlignment(Pos.CENTER);
+		hbox.setPadding(new Insets(10));
+		hbox.setSpacing(20);
+		hbox.setAlignment(Pos.CENTER);
+
+		this.label = new Label();
+
+		Button button = new Button("Informacja");
+		Button button1 = new Button("Ostrze¿enie");
+		Button button2 = new Button("Alarm");
+		Button button3 = new Button("B³¹d krytyczny");
+		
+		button.setOnAction(e -> showInfo());
+		button1.setOnAction(e -> showInfo());
+		button2.setOnAction(e -> showInfo());
+		button3.setOnAction(e -> showInfo());
+
+		
+		
+		root.getChildren().addAll(hbox, label);
+		hbox.getChildren().addAll(button, button1, button2, button3);
+
+		Scene scene = new Scene(root, 450, 200);
+		stage.setTitle("Praca zaliczeniowa INU");
+		stage.setScene(scene);
+
+		stage.show();
+
+	}
+
+	public static void main(String args[]) {
+		launch(args);
+	}
+
+}
