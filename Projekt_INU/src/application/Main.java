@@ -161,7 +161,7 @@ public class Main extends Application {
 		MessageBoxButton mbb = comboBoxButton.getSelectionModel().getSelectedItem();
 		setButtons(mbb);
 		
-		//MessageBoxResult mbr = 
+		//yucv 67vbc b76 bfj vjMessageBoxResult mbr = 
 
 		Scene scene = new Scene(border);
 		newStage.setScene(scene);
