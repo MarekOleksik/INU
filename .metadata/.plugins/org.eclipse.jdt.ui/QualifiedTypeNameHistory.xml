@@ -41,9 +41,10 @@
 <fullyQualifiedTypeName name="javafx.stage.Modality"/>
 <fullyQualifiedTypeName name="javafx.scene.input.KeyEvent"/>
 <fullyQualifiedTypeName name="javafx.event.EventHandler"/>
-<fullyQualifiedTypeName name="application.MessageBoxButton"/>
 <fullyQualifiedTypeName name="javafx.scene.control.ButtonType"/>
 <fullyQualifiedTypeName name="javafx.scene.control.ButtonBar.ButtonData"/>
 <fullyQualifiedTypeName name="javafx.geometry.HPos"/>
 <fullyQualifiedTypeName name="application.MessageBoxResult"/>
+<fullyQualifiedTypeName name="application.MessageBoxButton"/>
+<fullyQualifiedTypeName name="javafx.application.Platform"/>
 </qualifiedTypeNameHistroy>
