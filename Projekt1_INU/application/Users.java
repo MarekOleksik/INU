@@ -26,9 +26,9 @@ public class Users {
  }
  private void readUsers() {
  HashMap<String,String> devUsers = new HashMap<String, String>();
- devUsers.put("maciej.oleksik", "1234");
- devUsers.put("jakub.oleksik", "1234");
- devUsers.put("szymon.oleksik", "1234");
+ devUsers.put("maciej.kowalczyk", "1234");
+ devUsers.put("jakub.bugaj", "1234");
+ devUsers.put("szymon.stoch", "1234");
  users.put(Environment.Development, devUsers);
  HashMap<String,String> testUsers = new HashMap<String, String>();
  testUsers.put("ewa.cudna", "1234");

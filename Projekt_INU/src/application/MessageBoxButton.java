@@ -1,7 +1,7 @@
 package application;
 
 public enum MessageBoxButton {
-	AbortRetryIgnore("Przerwij", "Ponów", "Ignoruj"), OK("OK"), OKCancel("OK", "Anuluj"), RetryCancel("Ponów",
+	AbortRetryIgnore("Przerwij", "Ponow", "Ignoruj"), OK("OK"), OKCancel("OK", "Anuluj"), RetryCancel("Ponow",
 			"Anuluj"), YesNo("Tak", "Nie"), YesNoCancel("Tak", "Nie", "Anuluj");
 
 	private String[] text = new String[3];

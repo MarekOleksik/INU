@@ -1,0 +1,159 @@
+package application;
+
+import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.event.EventHandler;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+
+public class Main extends Application {
+
+	private Label labelTitle, labelMesage, labelIcon, labelButtons;
+	private static TextField textTitle;
+	private static TextArea textMessage;
+	private Button showWindow, close;
+	private static Button btnYes, btnNo, btnCancel, btnAbort, btnRetry, btnIgnore;
+	private static ComboBox<MessageBoxIcon> comboBoxIcon;
+	private static ComboBox<MessageBoxButton> comboBoxButton;
+	private static BorderPane border;
+	private static FlowPane flow;
+	private static Stage newStage;
+	private static Image imageViewYes = new Image(
+			ClassLoader.getSystemResourceAsStream("application/images/StatusOK_32x.png"));
+	private static Image imageViewNo = new Image(
+			ClassLoader.getSystemResourceAsStream("application/images/StatusNo_32xLG.png"));
+
+	@Override
+	public void start(Stage stage) {
+
+		// panel vbox
+		VBox root = new VBox();
+		root.setPadding(new Insets(10));
+		root.setSpacing(10);
+		root.setAlignment(Pos.CENTER);
+
+		// panel hbox1
+		HBox hbox1 = new HBox();
+		hbox1.setPadding(new Insets(10));
+		hbox1.setSpacing(10);
+		hbox1.setAlignment(Pos.TOP_LEFT);
+		labelTitle = new Label("Tytuł okna");
+		textTitle = new TextField("Informacja");
+		textTitle.setMinWidth(120);
+		hbox1.getChildren().addAll(labelTitle, getTextTitle());
+
+		// panel hbox2
+		HBox hbox2 = new HBox();
+		hbox2.setPadding(new Insets(10));
+		hbox2.setSpacing(10);
+		hbox2.setAlignment(Pos.TOP_LEFT);
+		labelIcon = new Label("Ikona");
+		comboBoxIcon = new ComboBox<>();
+		comboBoxIcon.getItems().addAll(MessageBoxIcon.values());
+
+		comboBoxIcon.setOnAction(e -> {
+			MessageBoxIcon selected = getComboBoxIcon().getSelectionModel().getSelectedItem();
+
+		});
+		hbox2.getChildren().addAll(labelIcon, getComboBoxIcon());
+
+		// panel hbox3
+		HBox hbox3 = new HBox();
+		hbox3.setPadding(new Insets(10));
+		hbox3.setSpacing(10);
+		hbox3.setAlignment(Pos.TOP_LEFT);
+		labelMesage = new Label("Treść wiadomości");
+		setTextMessage(new TextArea("Treść wiadomości do okienka"));
+		getTextMessage().setMaxWidth(200);
+		getTextMessage().setMaxHeight(100);
+		getTextMessage().setWrapText(true);
+
+		hbox3.getChildren().addAll(labelMesage, getTextMessage());
+
+		// panel hbox4
+		HBox hbox4 = new HBox();
+		hbox4.setPadding(new Insets(10));
+		hbox4.setSpacing(10);
+		hbox4.setAlignment(Pos.TOP_LEFT);
+		labelButtons = new Label("Predefiniowany zestaw przycisków");
+		setComboBoxButton(new ComboBox<>());
+		getComboBoxButton().setItems(FXCollections.observableArrayList(MessageBoxButton.values()));
+		hbox4.getChildren().addAll(labelButtons, getComboBoxButton());
+
+		// panel hbox5
+		HBox hbox5 = new HBox();
+		hbox5.setPadding(new Insets(10));
+		hbox5.setSpacing(10);
+		hbox5.setAlignment(Pos.CENTER);
+		showWindow = new Button("Pokaż okno");
+		showWindow.setOnAction(e -> MsgBox.show("Lorem ipsum dolor sit amet... ", "Lorem ipsum", MessageBoxButton.OK, MessageBoxIcon.Information));
+		close = new Button("Zamknij");
+		close.setOnAction(e->Platform.exit());
+		hbox5.getChildren().addAll(showWindow, close);
+		
+		root.getChildren().addAll(hbox1, hbox2, hbox3, hbox4, hbox5);
+
+		Scene scene = new Scene(root, 400, 400);
+		stage.setTitle("Praca zaliczeniowa INU");
+		stage.setScene(scene);
+		stage.centerOnScreen();
+
+		stage.show();
+
+		//MessageBoxButton.AbortRetryIgnore.getCount();
+	}
+
+	public static void main(String args[]) {
+		launch(args);
+	}
+
+	public static TextField getTextTitle() {
+		return textTitle;
+	}
+
+	public static void setTextTitle(TextField textTitle) {
+		Main.textTitle = textTitle;
+	}
+
+	public static ComboBox<MessageBoxButton> getComboBoxButton() {
+		return comboBoxButton;
+	}
+
+	public static void setComboBoxButton(ComboBox<MessageBoxButton> comboBoxButton) {
+		Main.comboBoxButton = comboBoxButton;
+	}
+
+	public static ComboBox<MessageBoxIcon> getComboBoxIcon() {
+		return comboBoxIcon;
+	}
+
+	public static void setComboBoxIcon(ComboBox<MessageBoxIcon> comboBoxIcon) {
+		Main.comboBoxIcon = comboBoxIcon;
+	}
+
+	public static TextArea getTextMessage() {
+		return textMessage;
+	}
+
+	public static void setTextMessage(TextArea textMessage) {
+		Main.textMessage = textMessage;
+	}
+
+	
+}

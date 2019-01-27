@@ -1,27 +1,23 @@
 package application;
 
 public enum MessageBoxResult {
-	Abort("Przerwij"), Retry("Ponów"), Ignore("Ignoruj"), OK("OK"), Cancel("Anuluj"), Yes("Tak"), No("Nie");
+	Abort("Przerwij"), Retry("PonÃ³w"), Ignore("Ignoruj"), OK("OK"), Cancel("Anuluj"), Yes("Tak"), No("Nie");
 
-	private String[] text = new String[3];
-	private int count;
+	private String text;
 
-	MessageBoxResult(String... msg) {
-		for (int i = 0; i < msg.length; ++i)
-			text[i] = msg[i];
-		count = msg.length;
+	MessageBoxResult(String msg) {
+		text = msg;
 	}
-	
+
 	@Override
 	public String toString() {
-		return text[0];
+		return text;
 	}
-	
-	public String getText(int i) {
-		return text[i];
-	}
-	
-	public int getCount() {
-		return count;
+
+	public static MessageBoxResult getResult(String text) {
+		for (MessageBoxResult result : MessageBoxResult.values())
+			if (result.toString() == text)
+				return result;
+		return Cancel;
 	}
 }

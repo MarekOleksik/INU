@@ -7,7 +7,6 @@
 <fullyQualifiedTypeName name="javafx.scene.text.Text"/>
 <fullyQualifiedTypeName name="javafx.geometry.VPos"/>
 <fullyQualifiedTypeName name="javafx.scene.Group"/>
-<fullyQualifiedTypeName name="javafx.collections.ObservableList"/>
 <fullyQualifiedTypeName name="javafx.scene.shape.Line"/>
 <fullyQualifiedTypeName name="javafx.scene.paint.Color"/>
 <fullyQualifiedTypeName name="javafx.event.ActionEvent"/>
@@ -31,7 +30,6 @@
 <fullyQualifiedTypeName name="javafx.scene.control.Dialog"/>
 <fullyQualifiedTypeName name="javafx.geometry.Insets"/>
 <fullyQualifiedTypeName name="javafx.scene.image.ImageView"/>
-<fullyQualifiedTypeName name="javafx.application.Application"/>
 <fullyQualifiedTypeName name="application.FXDialog.Callable"/>
 <fullyQualifiedTypeName name="javafx.beans.value.ChangeListener"/>
 <fullyQualifiedTypeName name="javafx.scene.control.TextField"/>
@@ -44,7 +42,10 @@
 <fullyQualifiedTypeName name="javafx.scene.control.ButtonType"/>
 <fullyQualifiedTypeName name="javafx.scene.control.ButtonBar.ButtonData"/>
 <fullyQualifiedTypeName name="javafx.geometry.HPos"/>
-<fullyQualifiedTypeName name="application.MessageBoxResult"/>
-<fullyQualifiedTypeName name="application.MessageBoxButton"/>
 <fullyQualifiedTypeName name="javafx.application.Platform"/>
+<fullyQualifiedTypeName name="javafx.application.Application"/>
+<fullyQualifiedTypeName name="javafx.collections.ObservableList"/>
+<fullyQualifiedTypeName name="application.MessageBoxIcon"/>
+<fullyQualifiedTypeName name="application.MessageBoxButton"/>
+<fullyQualifiedTypeName name="application.MessageBoxResult"/>
 </qualifiedTypeNameHistroy>
