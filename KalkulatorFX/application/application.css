@@ -1,0 +1,101 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.top	{
+	
+-fx-background-color:green;
+-fx-font-size:24;
+-fx-background-radius:0;
+-fx-border-color:black;
+}
+.top:pressed	{
+	
+-fx-background-color:green;
+-fx-font-size:24;
+-fx-background-radius:0;
+-fx-border-color:black;
+-fx-border-width:5;
+}
+.top:hover	{
+	
+-fx-background-color:greenyellow ;
+-fx-font-size:30;
+-fx-background-radius:0;
+-fx-border-color:black;
+}
+.top:focused	{
+	
+-fx-background-color:greenyellow ;
+-fx-font-size:30;
+-fx-background-radius:0;
+-fx-border-color:black;
+}
+.right	{
+	
+-fx-background-color:orange;
+-fx-font-size:24;
+-fx-background-radius:0;
+-fx-border-color:black;
+}
+.right:pressed	{
+	
+-fx-background-color:orange;
+-fx-font-size:24;
+-fx-background-radius:0;
+-fx-border-color:black;
+-fx-border-width:5;
+}
+.right:hover	{
+	
+-fx-background-color:orangered ;
+-fx-font-size:35;
+-fx-background-radius:0;
+-fx-border-color:black;
+}
+.right:focused	{
+	
+-fx-background-color:orangered ;
+-fx-font-size:35;
+-fx-background-radius:0;
+-fx-border-color:black;
+}
+
+.digit	{
+-fx-font-size:24;
+-fx-background-radius:0;
+-fx-border-color:black;
+
+}
+.digit:pressed	{
+-fx-font-size:24;
+-fx-background-radius:0;
+-fx-border-color:black;
+-fx-border-width:5;
+
+}
+.digit:hover{
+-fx-font-size:35;
+-fx-background-radius:0;
+-fx-border-color:black;
+-fx-border-width:3;
+-fx-background-color:white;
+}
+.digit:focused{
+-fx-font-size:40;
+-fx-background-radius:0;
+-fx-border-color:black;
+-fx-border-width:3;
+-fx-background-color:white;
+}
+.result	{
+	-fx-font-size:40;
+	-fx-text-fill:white;
+	-fx-background-color:grey;
+	-fx-background-radius:0;
+	-fx-border-color:black;
+}
+.result:hover	{
+	-fx-font-size:40;
+	-fx-text-fill:black;
+	-fx-background-color:lightgrey ;
+	-fx-background-radius:0;
+	-fx-border-color:black;
+}

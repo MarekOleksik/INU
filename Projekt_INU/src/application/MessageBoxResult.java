@@ -1,7 +1,7 @@
 package application;
 
 public enum MessageBoxResult {
-	Abort("Przerwij"), Retry("Ponów"), Ignore("Ignoruj"), OK("OK"), Cancel("Anuluj"), Yes("Tak"), No("Nie");
+	Abort("Przerwij"), Retry("Ponow"), Ignore("Ignoruj"), OK("OK"), Cancel("Anuluj"), Yes("Tak"), No("Nie");
 
 	private String text;
 

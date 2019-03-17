@@ -19,7 +19,6 @@
 <fullyQualifiedTypeName name="javafx.scene.layout.BorderPane"/>
 <fullyQualifiedTypeName name="javafx.scene.layout.FlowPane"/>
 <fullyQualifiedTypeName name="javafx.geometry.Orientation"/>
-<fullyQualifiedTypeName name="javafx.scene.input.MouseEvent"/>
 <fullyQualifiedTypeName name="javafx.geometry.Pos"/>
 <fullyQualifiedTypeName name="javafx.scene.Scene"/>
 <fullyQualifiedTypeName name="javafx.scene.control.ComboBox"/>
@@ -47,5 +46,6 @@
 <fullyQualifiedTypeName name="javafx.collections.ObservableList"/>
 <fullyQualifiedTypeName name="application.MessageBoxIcon"/>
 <fullyQualifiedTypeName name="application.MessageBoxButton"/>
+<fullyQualifiedTypeName name="javafx.scene.input.MouseEvent"/>
 <fullyQualifiedTypeName name="application.MessageBoxResult"/>
 </qualifiedTypeNameHistroy>

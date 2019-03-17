@@ -4,65 +4,72 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import javafx.application.Application;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
-import javafx.stage.Stage;
+public class OraConn {
+	static private String url;
+	static private String userName;
+	static private String userPassword;
+	static private Connection connection = null;
 
-public class OraConn extends Application {
-	public static void main(String[] args) throws SQLException, ClassNotFoundException {
-		launch(args);
-	}
-	private static Connection connection;
-	@Override
-	public void start(Stage primaryStage) {
-		OraConn oraJDBC = new OraConn();
-		oraJDBC.testConnection();
+	private OraConn() {
 	}
 
-	private void testConnection() {
+	static Connection getConnection() {
+		return connection;
+	}
+
+	private static int err = 0;
+
+	public static int getErr() {
+		return err;
+	}
+
+	private static String errMsg = "";
+
+	public static String getErrMsg() {
+		return errMsg;
+	}
+
+	public static int open(String url, String usr, String pass) {
 		try {
+			OraConn.url = url;
+			OraConn.userName = usr;
+			OraConn.userPassword = pass;
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 		} catch (ClassNotFoundException ex) {
-			MessageBox.showAndWait(AlertType.ERROR, "Brak sterownika Oracle JDBC.");
-			//	ex.printStackTrace();
+			errMsg = ex.getMessage();
+			return err = 1;
 		}
-		MessageBox.showAndWait(AlertType.INFORMATION, "Sterownik Oracle JDBC został zarejestrowany.");
-		connection = null;
 		try {
-			connection = DriverManager.getConnection("jdbc:oracle:thin:@ora3.elka.pw.edu.pl:1521:ora3inf", "temp03", "temp03");
+			connection = DriverManager.getConnection(OraConn.url, OraConn.userName, OraConn.userPassword);
+			errMsg = "";
+			return err = 0;
 		} catch (SQLException ex) {
-			MessageBox.showAndWait(AlertType.ERROR, "	Błąd	łączenia	z 	bazą	!");
-			//	ex.printStackTrace();
-			return;
+			connection = null;
+			errMsg = ex.getMessage();
+			return err = 2;
 		}
+	}
 
+	public static int close() {
 		try {
-			if (connection != null) {
-				MessageBox.showAndWait(AlertType.INFORMATION, "	Połączono.");
+			if (connection != null)
 				connection.close();
-				MessageBox.showAndWait(AlertType.INFORMATION, "	Rozłączono.");
-			} else
-				MessageBox.showAndWait(AlertType.ERROR, "	Brak połączenia!");
+			errMsg = "";
+			return err = 0;
 		} catch (SQLException ex) {
-			MessageBox.showAndWait(AlertType.ERROR, ex.getMessage());
-			return;
-		}
-	}
-
-	static class MessageBox {
-		private MessageBox() {
+			connection = null;
+			errMsg = ex.getMessage();
+			return err = 1;
 		}
 
-		public static void showAndWait(AlertType aType, String content) {
-			Alert alert = new Alert(aType);
-			alert.setTitle("Test sterownika");
-			alert.setHeaderText("JDBC");
-			alert.setContentText(content);
-			alert.showAndWait();
-		}
 	}
-	public static Connection getConnection(){
-		return connection;
+
+	public static boolean setAutoCommit(boolean isAutoCommit) {
+		try {
+			connection.setAutoCommit(isAutoCommit);
+		} catch (SQLException e) {
+			return false;
+		}
+		return true;
 	}
 }

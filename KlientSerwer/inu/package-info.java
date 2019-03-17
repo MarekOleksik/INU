@@ -1,0 +1,8 @@
+/**
+ * 
+ */
+/**
+ * @author moleksik
+ *
+ */
+package inu;

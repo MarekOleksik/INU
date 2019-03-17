@@ -16,6 +16,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
@@ -55,6 +56,7 @@ public class Main extends Application {
 		hbox1.setSpacing(10);
 		hbox1.setAlignment(Pos.TOP_LEFT);
 		labelTitle = new Label("Tytu³ okna");
+	
 		textTitle = new TextField("Tytu³ okna");
 		textTitle.setMinWidth(120);
 		hbox1.getChildren().addAll(labelTitle, textTitle);

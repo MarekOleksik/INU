@@ -42,7 +42,8 @@ public class Main extends Application {
 		hbox1.setSpacing(10);
 		hbox1.setAlignment(Pos.TOP_LEFT);
 		labelTitle = new Label("Tytul okna");
-		textTitle = new TextField("Informacja");
+		textTitle = new TextField();
+		textTitle.setPromptText("Wpisz tytul okna");
 		textTitle.setMinWidth(120);
 		hbox1.getChildren().addAll(labelTitle, textTitle);
 
